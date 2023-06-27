@@ -50,11 +50,11 @@ public class GameServer {
         server.start();
         try {
             server.bind(serverPort);
+            registerPackets();
+            addServerListener();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        registerPackets();
-        addServerListener();
     }
 
     private void registerPackets() {
